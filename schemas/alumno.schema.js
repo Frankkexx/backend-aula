@@ -3,16 +3,16 @@ const Joi = require('joi');
 const id = Joi.string()
               .uuid();
 const nombre = Joi.string()
-                  .alphanum()
                   .min(3)
-                  .max(15);
+                  .max(50);
 const edad = Joi.number()
                   .integer()
                   .min(7)
                   .max(12);
-const grado = Joi.string()
-                  .min(5)
-                  .max(10);
+const grado = Joi.number()
+                  .integer()
+                  .min(1)
+                  .max(5);
 const createAlumnoSchema = Joi.object({
   nombre: nombre.required(),
   grado: grado.required(),
